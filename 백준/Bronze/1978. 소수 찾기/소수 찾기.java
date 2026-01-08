@@ -16,7 +16,7 @@ public class Main {
             if(a % 2 == 1 && a != 1) {
                 boolean prime = true;
 
-                for(int x = 2; x <= a / 2; x++) {
+                for(int x = 3; x <= a / 2; x = x + 2) {
                     if(a % x == 0) {
                         prime = false;
                         break;
