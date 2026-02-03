@@ -6,29 +6,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
+        int[] a = new int[1001];
+        a[1] = 1;
+        a[2] = 2;
 
-        int[][] combine = new int[1001][1001];
-
-        for(int x = 0; x < 1001; x++) {
-            for(int y = 0; y <= x; y++) {
-                if(x == y || y == 0) {
-                    combine[x][y] = 1;
-                } else {
-                    combine[x][y] = (combine[x - 1][y - 1] + combine[x - 1][y]) % 10007;
-                }
-            }
+        for(int i = 3; i < 1001; i++) {
+            a[i] = (a[i - 1] + a[i - 2]) % 10007;
         }
         
-        int cnt = 0;
+        
 
-        for(int num2 = 0; num2 * 2 <= n; num2++) {
-            int num1 = n - (num2 * 2);
-            int x = num1 + num2;
-
-            cnt = (cnt + combine[x][num1]) % 10007;
-        }
-
-        System.out.println(cnt);
+        System.out.println(a[n]);
 
         sc.close();
     }
