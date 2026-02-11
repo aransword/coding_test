@@ -18,7 +18,6 @@ public class Main {
         Arrays.sort(compressedCoord);
 
         int[] list = new int[N];
-        Arrays.fill(list, 1000000001);
 
         int prev = 0;
         int cnt = 0;
@@ -40,7 +39,7 @@ public class Main {
 
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < N; i++) {
-            int index = Arrays.binarySearch(list, X[i]);
+            int index = Arrays.binarySearch(list, 0, cnt, X[i]);
             sb.append(index).append(' ');
         }
 
