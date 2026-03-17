@@ -19,11 +19,9 @@ public class Main {
         int[] arrayLengths = new int[inputs.length];
 
         // 수열을 돌면서, 인덱스가 자신보다 작은 위치에서 자신보다 크기가 작은 수 중에 연속 길이가 가장 긴 값을 찾는다.
-        // 근데 이러면 연산 횟수가 너무 많아지는 것이 아닌가?
         arrayLengths[0] = 1;
         int result = 1;
         for(int i = 1; i < arrayLengths.length; i++) {
-            boolean isFind = false;
             int max = 0;
             for(int j = 0; j < i; j++) {
                 if(A[i] > A[j] && max < arrayLengths[j]) {
